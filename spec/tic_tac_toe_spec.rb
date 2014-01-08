@@ -37,4 +37,14 @@ describe TicTacToe do
                   ]
     tic_tac_toe.player_o_status(input).should == output         
   end
+   it "returns string 'win' if you win" do
+    tic_tac_toe = TicTacToe.new
+    output = 'win'
+    input = Matrix[
+                    [0, 0, 0],
+                    ['o', 'o', 'o'],
+                    [0, 0, 0]
+                  ]
+    tic_tac_toe.player_o_status(input).should == output         
+  end
 end
