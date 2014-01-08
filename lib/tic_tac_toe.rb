@@ -3,8 +3,7 @@ require 'matrix'
 class TicTacToe
   def initialize
     # We use 1 for x, 2 is for o
-    @one_x = 1
-    
+    @one_x = 'x'
     @matrix = Matrix[
                       [0, 0, 0],
                       [0, 0, 0],
@@ -12,14 +11,14 @@ class TicTacToe
                     ]
   end
 
-  def place_x_in_matrix(x_position,y_position)    
+  def place_x_in_matrix(x_position, y_position)
     @matrix = Matrix.build(3, 3) do |row, col|
       if (row == x_position) && (col == y_position)
-          @one_x
+        @one_x
       else
-          @matrix[x_position,y_position]
+        @matrix[x_position, y_position]
       end
-    end  
+    end
     @matrix
   end
 
@@ -27,5 +26,5 @@ class TicTacToe
     @matrix.to_a.each do |value|
       puts value.inspect
     end
-  end  
+  end
 end

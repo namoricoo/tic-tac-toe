@@ -10,11 +10,10 @@ describe TicTacToe do
     x_position = 0
     y_position = 0
     output = Matrix[
-                      [1, 0, 0],
+                      ['x', 0, 0],
                       [0, 0, 0],
                       [0, 0, 0]
                     ]
-    tic_tac_toe.place_x_in_matrix(x_position,y_position)    
-    tic_tac_toe.get_table.should == output
+    tic_tac_toe.place_x_in_matrix(x_position,y_position).should == output    
   end
 end
