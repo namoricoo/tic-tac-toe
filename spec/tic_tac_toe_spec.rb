@@ -28,12 +28,13 @@ describe TicTacToe do
     tic_tac_toe.place_o_in_matrix(x_position, y_position).should == output
   end
   it "returns string 'win' if you win" do
+    tic_tac_toe = TicTacToe.new
     output = 'win'
     input = Matrix[
                     ['o', 'o', 'o'],
                     [0, 0, 0],
                     [0, 0, 0]
                   ]
-    tic_tac_toe.player_o_status(input).should == output            
+    tic_tac_toe.player_o_status(input).should == output         
   end
 end
