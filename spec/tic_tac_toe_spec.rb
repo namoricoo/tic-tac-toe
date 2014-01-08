@@ -25,6 +25,6 @@ describe TicTacToe do
                       [0, 0, 0],
                       [0, 0, 0]
                     ]
-    tic_tac_toe.place_x_in_matrix(x_position, y_position).should == output
+    tic_tac_toe.place_o_in_matrix(x_position, y_position).should == output
   end
 end
