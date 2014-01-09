@@ -54,11 +54,14 @@ class TicTacToe
    def  vertical_pattern(input_matrix,pattern_string)
     input_array = input_matrix.transpose.to_a
     input_array.each do |value|
-      temp_string = value.join('')     
+      temp_string = value.join('')
+      puts '------------'
+      puts "temp_string= #{temp_string}"
       return true if temp_string =~ /#{pattern_string}{3}/   
     end
     false
   end
+
   def print_table
     @matrix.to_a.each do |value|
       puts value.inspect

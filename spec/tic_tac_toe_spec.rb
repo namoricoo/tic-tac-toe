@@ -57,4 +57,14 @@ describe TicTacToe do
                   ]
     tic_tac_toe.player_o_status(input).should == output         
   end
+  it "returns string 'win' if you 1rst column vertical win" do
+    tic_tac_toe = TicTacToe.new
+    output = 'win'
+    input = Matrix[
+                    ['o', 0, 0],
+                    ['o', 0, 0],
+                    ['o', 0, 0]
+                  ]
+    tic_tac_toe.player_o_status(input).should == output         
+  end
 end
