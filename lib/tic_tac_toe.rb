@@ -62,8 +62,10 @@ class TicTacToe
 
   def diagonal_pattern(input_matrix,pattern_string)
     left_diagonal = "#{input_matrix[0,0]}#{input_matrix[1,1]}#{input_matrix[2,2]}"
-    return true if left_diagonal =~ /#{pattern_string}{3}/       
-    false
+    right_diagonal = "#{input_matrix[2,0]}#{input_matrix[1,1]}#{input_matrix[0,2]}"
+    left_diagonal_bool = left_diagonal =~ /#{pattern_string}{3}/
+    right_diagonal_bool = right_diagonal =~ /#{pattern_string}{3}/
+    left_diagonal_bool ||  right_diagonal_bool
   end
 
   def print_table
