@@ -31,21 +31,21 @@ describe TicTacToe do
     tic_tac_toe = TicTacToe.new
     output = 'win'
     input = Matrix[
-                    ['o', 'o', 'o'],
+                    %w(o o o),
                     [0, 0, 0],
                     [0, 0, 0]
                   ]
-    tic_tac_toe.player_o_status(input).should == output         
+    tic_tac_toe.player_o_status(input).should == output
   end
-   it "returns string 'win' if 2nd row horizontal win" do
+  it "returns string 'win' if 2nd row horizontal win" do
     tic_tac_toe = TicTacToe.new
     output = 'win'
     input = Matrix[
                     [0, 0, 0],
-                    ['o', 'o', 'o'],
+                    %w(o o o),
                     [0, 0, 0]
                   ]
-    tic_tac_toe.player_o_status(input).should == output         
+    tic_tac_toe.player_o_status(input).should == output
   end
   it "returns string 'win' 3rd row horizontal win" do
     tic_tac_toe = TicTacToe.new
@@ -53,9 +53,9 @@ describe TicTacToe do
     input = Matrix[
                     [0, 0, 0],
                     [0, 0, 0],
-                    ['o', 'o', 'o']
+                    %w(o o o)
                   ]
-    tic_tac_toe.player_o_status(input).should == output         
+    tic_tac_toe.player_o_status(input).should == output
   end
   it "returns string 'win' if you 1rst column vertical win" do
     tic_tac_toe = TicTacToe.new
@@ -65,9 +65,9 @@ describe TicTacToe do
                     ['o', 0, 0],
                     ['o', 0, 0]
                   ]
-    tic_tac_toe.player_o_status(input).should == output         
+    tic_tac_toe.player_o_status(input).should == output
   end
-   it "returns string 'win' if you 2nd column vertical win" do
+  it "returns string 'win' if you 2nd column vertical win" do
     tic_tac_toe = TicTacToe.new
     output = 'win'
     input = Matrix[
@@ -75,7 +75,7 @@ describe TicTacToe do
                     [0, 'o', 0],
                     [0, 'o', 0]
                   ]
-    tic_tac_toe.player_o_status(input).should == output         
+    tic_tac_toe.player_o_status(input).should == output
   end
   it "returns string 'win' if you 2nd column vertical win" do
     tic_tac_toe = TicTacToe.new
@@ -85,7 +85,7 @@ describe TicTacToe do
                     [0, 0, 'o'],
                     [0, 0, 'o']
                   ]
-    tic_tac_toe.player_o_status(input).should == output         
+    tic_tac_toe.player_o_status(input).should == output
   end
   it "returns string 'win' if you diagonal left win" do
     tic_tac_toe = TicTacToe.new
@@ -95,16 +95,16 @@ describe TicTacToe do
                     [0, 'o', 0],
                     [0, 0, 'o']
                   ]
-    tic_tac_toe.player_o_status(input).should == output         
+    tic_tac_toe.player_o_status(input).should == output
   end
-   it "returns string 'win' if you diagonal right win" do
+  it "returns string 'win' if you diagonal right win" do
     tic_tac_toe = TicTacToe.new
     output = 'win'
     input = Matrix[
-                    [0, 0,'o'],
+                    [0, 0, 'o'],
                     [0, 'o', 0],
                     ['o', 0, 0]
                   ]
-    tic_tac_toe.player_o_status(input).should == output         
+    tic_tac_toe.player_o_status(input).should == output
   end
 end
