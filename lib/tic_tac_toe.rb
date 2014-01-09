@@ -30,39 +30,39 @@ class TicTacToe
     @matrix
   end
 
-  def player_o_status(input_matrix)    
-    if horizontal_pattern(input_matrix,'o')
+  def player_o_status(input_matrix)
+    if horizontal_pattern(input_matrix, 'o')
       'win'
-    elsif vertical_pattern(input_matrix,'o')
-     'win'
-    elsif diagonal_pattern(input_matrix,'o')
-     'win'
+    elsif vertical_pattern(input_matrix, 'o')
+      'win'
+    elsif diagonal_pattern(input_matrix, 'o')
+      'win'
     else
-     'none'
-    end   
+      'none'
+    end
   end
 
-  def horizontal_pattern(input_matrix,pattern_string)
+  def horizontal_pattern(input_matrix, pattern_string)
     input_array = input_matrix.to_a
     input_array.each do |value|
       temp_string = value.join('')
-      return true if temp_string =~ /#{pattern_string}{3}/      
+      return true if temp_string =~ /#{pattern_string}{3}/
     end
     false
   end
 
-   def  vertical_pattern(input_matrix,pattern_string)
+  def  vertical_pattern(input_matrix, pattern_string)
     input_array = input_matrix.transpose.to_a
     input_array.each do |value|
-      temp_string = value.join('')     
-      return true if temp_string =~ /#{pattern_string}{3}/   
+      temp_string = value.join('')
+      return true if temp_string =~ /#{pattern_string}{3}/
     end
     false
   end
 
-  def diagonal_pattern(input_matrix,pattern_string)
-    left_diagonal = "#{input_matrix[0,0]}#{input_matrix[1,1]}#{input_matrix[2,2]}"
-    right_diagonal = "#{input_matrix[2,0]}#{input_matrix[1,1]}#{input_matrix[0,2]}"
+  def diagonal_pattern(input, pattern_string)
+    left_diagonal = "#{input[0, 0]}#{input[1, 1]}#{input[2, 2]}"
+    right_diagonal = "#{input[2, 0]}#{input[1, 1]}#{input[0, 2]}"
     left_diagonal_bool = left_diagonal =~ /#{pattern_string}{3}/
     right_diagonal_bool = right_diagonal =~ /#{pattern_string}{3}/
     left_diagonal_bool ||  right_diagonal_bool
@@ -70,7 +70,7 @@ class TicTacToe
 
   def print_table
     @matrix.to_a.each do |value|
-      puts value.inspect 
+      puts value.inspect
     end
   end
 end
