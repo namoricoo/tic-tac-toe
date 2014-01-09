@@ -96,5 +96,5 @@ describe TicTacToe do
                     [0, 0, 'o']
                   ]
     tic_tac_toe.player_o_status(input).should == output         
-  end
+  end 
 end

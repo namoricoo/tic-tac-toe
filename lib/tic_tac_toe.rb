@@ -30,16 +30,16 @@ class TicTacToe
     @matrix
   end
 
-  def player_o_status(input_matrix)
-    result = ''
+  def player_o_status(input_matrix)    
     if horizontal_pattern(input_matrix,'o')
-      result = 'win'
+      'win'
     elsif vertical_pattern(input_matrix,'o')
-      result = 'win'
+     'win'
+    elsif diagonal_pattern(input_matrix,'o')
+     'win'
     else
-     result = 'none'   
-    end
-    result
+     'none'
+    end   
   end
 
   def horizontal_pattern(input_matrix,pattern_string)
@@ -60,9 +60,15 @@ class TicTacToe
     false
   end
 
+  def diagonal_pattern(input_matrix,pattern_string)
+    left_diagonal = "#{input_matrix[0,0]}#{input_matrix[1,1]}#{input_matrix[2,2]}"
+    return true if left_diagonal =~ /#{pattern_string}{3}/       
+    false
+  end
+
   def print_table
     @matrix.to_a.each do |value|
-      puts value.inspect
+      puts value.inspect 
     end
   end
 end
